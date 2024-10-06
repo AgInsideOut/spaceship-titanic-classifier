@@ -149,7 +149,7 @@ curl -X POST "https://spaceship-titanic-classifier.onrender.com/predict" \
         "ShoppingMall": 0.0,
         "Spa": 0.0,
         "VRDeck": 0.0,
-        "Cabin_num": 0.0,
+        "Cabin_num": 0,
         "HomePlanet_Earth": 0,
         "HomePlanet_Europa": 1,
         "HomePlanet_Mars": 0,

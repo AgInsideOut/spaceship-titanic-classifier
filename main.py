@@ -35,6 +35,7 @@ class InputData(BaseModel):
     ShoppingMall: float
     Spa: float
     VRDeck: float
+    Transported: int
     Cabin_num: float
     HomePlanet_Earth: int
     HomePlanet_Europa: int
@@ -62,7 +63,7 @@ class InputData(BaseModel):
 async def predict(data: InputData):
     try:
         input_data = np.array([[
-            data.CryoSleep, data.Cabin, data.Age, data.VIP,
+            data.CryoSleep, data.Age, data.VIP,
             data.RoomService, data.FoodCourt, data.ShoppingMall, data.Spa,
             data.VRDeck, data.Cabin_num, data.HomePlanet_Earth, data.HomePlanet_Europa,
             data.HomePlanet_Mars, data.HomePlanet_Unknown, data.Destination_55_Cancri_e,
