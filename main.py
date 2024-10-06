@@ -17,7 +17,7 @@ try:
     if not os.path.exists(model_path):
         logger.error(f"Model file not found: {model_path}")
         raise FileNotFoundError(f"Model file not found: {model_path}")
-    
+
     best_model = joblib.load(model_path)
     logger.info("Model loaded successfully")
 except Exception as e:
@@ -25,9 +25,9 @@ except Exception as e:
     logger.error(traceback.format_exc())
     sys.exit(1)
 
+
 class InputData(BaseModel):
     CryoSleep: int
-    Cabin: int
     Age: float
     VIP: int
     RoomService: float
@@ -35,6 +35,7 @@ class InputData(BaseModel):
     ShoppingMall: float
     Spa: float
     VRDeck: float
+    Cabin_num: float
     HomePlanet_Earth: int
     HomePlanet_Europa: int
     HomePlanet_Mars: int
@@ -43,6 +44,19 @@ class InputData(BaseModel):
     Destination_PSO_J318_5_22: int
     Destination_TRAPPIST_1e: int
     Destination_Unknown: int
+    Deck_A: int
+    Deck_B: int
+    Deck_C: int
+    Deck_D: int
+    Deck_E: int
+    Deck_F: int
+    Deck_G: int
+    Deck_T: int
+    Deck_Unknown: int
+    Side_P: int
+    Side_S: int
+    Side_Unknown: int
+
 
 @app.post("/predict")
 async def predict(data: InputData):
@@ -50,12 +64,14 @@ async def predict(data: InputData):
         input_data = np.array([[
             data.CryoSleep, data.Cabin, data.Age, data.VIP,
             data.RoomService, data.FoodCourt, data.ShoppingMall, data.Spa,
-            data.VRDeck, data.HomePlanet_Earth, data.HomePlanet_Europa,
+            data.VRDeck, data.Cabin_num, data.HomePlanet_Earth, data.HomePlanet_Europa,
             data.HomePlanet_Mars, data.HomePlanet_Unknown, data.Destination_55_Cancri_e,
             data.Destination_PSO_J318_5_22, data.Destination_TRAPPIST_1e,
-            data.Destination_Unknown
+            data.Destination_Unknown, data.Deck_A, data.Deck_B, data.Deck_C, data.Deck_D,
+            data.Deck_E, data.Deck_F, data.Deck_G, data.Deck_T, data.Deck_Unknown,
+            data.Side_P, data.Side_S, data.Side_Unknown
         ]])
-        
+
         prediction = best_model.predict(input_data)
         logger.info(f"Prediction made: {prediction[0]}")
         return {"prediction": int(prediction[0])}
@@ -64,9 +80,11 @@ async def predict(data: InputData):
         logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail="Internal server error")
 
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to the Spaceship Titanic Classifier"}
+
 
 @app.get("/transport")
 async def transport_check():

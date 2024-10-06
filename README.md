@@ -99,23 +99,35 @@ Base URL: <https://spaceship-titanic-classifier.onrender.com>
 
      ```json
      {
-       "CryoSleep": int,
-       "Cabin": int,
-       "Age": float,
-       "VIP": int,
-       "RoomService": float,
-       "FoodCourt": float,
-       "ShoppingMall": float,
-       "Spa": float,
-       "VRDeck": float,
-       "HomePlanet_Earth": int,
-       "HomePlanet_Europa": int,
-       "HomePlanet_Mars": int,
-       "HomePlanet_Unknown": int,
-       "Destination_55_Cancri_e": int,
-       "Destination_PSO_J318_5_22": int,
-       "Destination_TRAPPIST_1e": int,
-       "Destination_Unknown": int
+      "CryoSleep": int,
+      "Age": float,
+      "VIP": int,
+      "RoomService": float,
+      "FoodCourt": float,
+      "ShoppingMall": float,
+      "Spa": float,
+      "VRDeck": float,
+      "Cabin_num": float,
+      "HomePlanet_Earth": int,
+      "HomePlanet_Europa": int,
+      "HomePlanet_Mars": int,
+      "HomePlanet_Unknown": int,
+      "Destination_55_Cancri_e": int,
+      "Destination_PSO_J318_5_22": int,
+      "Destination_TRAPPIST_1e": int,
+      "Destination_Unknown": int,
+      "Deck_A": int,
+      "Deck_B": int,
+      "Deck_C": int,
+      "Deck_D": int,
+      "Deck_E": int,
+      "Deck_F": int,
+      "Deck_G": int,
+      "Deck_T": int,
+      "Deck_Unknown": int,
+      "Side_P": int,
+      "Side_S": int,
+      "Side_Unknown": int
      }
      ```
 
@@ -129,23 +141,35 @@ You can test the live API using curl or any API testing tool. Here's an example 
 curl -X POST "https://spaceship-titanic-classifier.onrender.com/predict" \
      -H "Content-Type: application/json" \
      -d '{
-       "CryoSleep": 0,
-       "Cabin": 1,
-       "Age": 65.0,
-       "VIP": 1,
-       "RoomService": 0.0,
-       "FoodCourt": 0.0,
-       "ShoppingMall": 0.0,
-       "Spa": 0.0,
-       "VRDeck": 0.0,
-       "HomePlanet_Earth": 0,
-       "HomePlanet_Europa": 1,
-       "HomePlanet_Mars": 0,
-       "HomePlanet_Unknown": 0,
-       "Destination_55_Cancri_e": 1,
-       "Destination_PSO_J318_5_22": 0,
-       "Destination_TRAPPIST_1e": 0,
-       "Destination_Unknown": 0
+        "CryoSleep": 0,
+        "Age": 65.0,
+        "VIP": 1,
+        "RoomService": 0.0,
+        "FoodCourt": 0.0,
+        "ShoppingMall": 0.0,
+        "Spa": 0.0,
+        "VRDeck": 0.0,
+        "Cabin_num": 0.0,
+        "HomePlanet_Earth": 0,
+        "HomePlanet_Europa": 1,
+        "HomePlanet_Mars": 0,
+        "HomePlanet_Unknown": 0,
+        "Destination_55_Cancri_e": 1,
+        "Destination_PSO_J318_5_22": 0,
+        "Destination_TRAPPIST_1e": 0,
+        "Destination_Unknown": 0,
+        "Deck_A": 0,
+        "Deck_B": 0,
+        "Deck_C": 0,
+        "Deck_D": 0,
+        "Deck_E": 0,
+        "Deck_F": 0,
+        "Deck_G": 0,
+        "Deck_T": 1,
+        "Deck_Unknown": 0,
+        "Side_P": 1,
+        "Side_S": 0,
+        "Side_Unknown": 0
      }'
 ```
 
@@ -153,13 +177,13 @@ curl -X POST "https://spaceship-titanic-classifier.onrender.com/predict" \
 
 The model used in this API is an Stacking Ensemble (All Models) trained to predict whether the passenger was transported or not. Here are some key performance metrics:
 
-- **Accuracy**: 0.7985 (+/- 0.0144)
-- **Precision**: 0.7847 (+/- 0.0157)
-- **Recall**: 0.8270 (+/- 0.0191)
-- **F1 Score**: 0.8052 (+/- 0.0143)
-- **F-beta Score**: 0.8052 (+/- 0.0143)
-- **ROC AUC**: 0.7983 (+/- 0.0144)
-- **Balanced Accuracy**: 0.7983 (+/- 0.0144)
+- **Accuracy**: 0.8059 (+/- 0.0091)
+- **Precision**: 0.7905 (+/- 0.0108)
+- **Recall**: 0.8361 (+/- 0.0094)
+- **F1 Score**: 0.8127 (+/- 0.0085)
+- **F-beta Score**: 0.8127 (+/- 0.0085)
+- **ROC AUC**: 0.8056 (+/- 0.0091)
+- **Balanced Accuracy**: 0.8056 (+/- 0.0091)
 
 ### Key Points
 
