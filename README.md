@@ -107,7 +107,7 @@ Base URL: <https://spaceship-titanic-classifier.onrender.com>
       "ShoppingMall": float,
       "Spa": float,
       "VRDeck": float,
-      "Cabin_num": float,
+      "Cabin_num": int,
       "HomePlanet_Earth": int,
       "HomePlanet_Europa": int,
       "HomePlanet_Mars": int,
