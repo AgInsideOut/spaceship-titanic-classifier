@@ -1,27 +1,36 @@
 import requests
 
-url = "https://your-render-url.onrender.com/predict"
+url = "https://spaceship-titanic-classifier.onrender.com/predict"
 data = {
-    "age": 65.0,
-    "hypertension": 1,
-    "heart_disease": 0,
-    "ever_married": 1,
-    "avg_glucose_level": 100.0,
-    "bmi": 28.5,
-    "gender_Male": 1,
-    "gender_Female": 0,
-    "gender_Other": 0,
-    "work_type_Govt_job": 0,
-    "work_type_Never_worked": 0,
-    "work_type_Private": 1,
-    "work_type_Self_employed": 0,
-    "work_type_children": 0,
-    "Residence_type_Rural": 0,
-    "Residence_type_Urban": 1,
-    "smoking_status_formerly_smoked": 1,
-    "smoking_status_smokes": 0,
-    "smoking_status_Unknown": 0,
-    "smoking_status_never_smoked": 0
+    "CryoSleep": 0,
+    "Age": 65.0,
+    "VIP": 1,
+    "RoomService": 0.0,
+    "FoodCourt": 0.0,
+    "ShoppingMall": 0.0,
+    "Spa": 0.0,
+    "VRDeck": 0.0,
+    "Cabin_num": 0.0,
+    "HomePlanet_Earth": 0,
+    "HomePlanet_Europa": 1,
+    "HomePlanet_Mars": 0,
+    "HomePlanet_Unknown": 0,
+    "Destination_55_Cancri_e": 1,
+    "Destination_PSO_J318_5_22": 0,
+    "Destination_TRAPPIST_1e": 0,
+    "Destination_Unknown": 0,
+    "Deck_A": 0,
+    "Deck_B": 0,
+    "Deck_C": 0,
+    "Deck_D": 0,
+    "Deck_E": 0,
+    "Deck_F": 0,
+    "Deck_G": 0,
+    "Deck_T": 1,
+    "Deck_Unknown": 0,
+    "Side_P": 1,
+    "Side_S": 0,
+    "Side_Unknown": 0
 }
 
 response = requests.post(url, json=data)
