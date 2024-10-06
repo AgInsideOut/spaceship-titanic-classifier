@@ -3,6 +3,7 @@ import sys
 import traceback
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from typing import Optional
 import joblib
 import numpy as np
 
@@ -35,7 +36,6 @@ class InputData(BaseModel):
     ShoppingMall: float
     Spa: float
     VRDeck: float
-    Transported: int
     Cabin_num: float
     HomePlanet_Earth: int
     HomePlanet_Europa: int
@@ -57,6 +57,7 @@ class InputData(BaseModel):
     Side_P: int
     Side_S: int
     Side_Unknown: int
+    Transported: Optional[int] = None
 
 
 @app.post("/predict")

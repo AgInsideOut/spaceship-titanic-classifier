@@ -23,5 +23,6 @@ skimpy
 statsmodels
 tpot
 tqdm
+typing
 uvicorn
 xgboost
