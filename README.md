@@ -151,15 +151,15 @@ curl -X POST "https://spaceship-titanic-classifier.onrender.com/predict" \
 
 ## Model Information
 
-The model used in this API is an RUSBoostClassifier trained to predict whether the passenger was transported or not. Here are some key performance metrics:
+The model used in this API is an Stacking Ensemble (All Models) trained to predict whether the passenger was transported or not. Here are some key performance metrics:
 
-- **Accuracy**: 0.7899 (+/- 0.0051)
-- **Precision**: 0.7789 (+/- 0.0142)
-- **Recall**: 0.8141 (+/- 0.0181)
-- **F1 Score**: 0.7960 (+/- 0.0042)
-- **F-beta Score**: 0.7960 (+/- 0.0042)
-- **ROC AUC**: 0.7897 (+/- 0.0052)
-- **Balanced Accuracy**: 0.7897 (+/- 0.0052)
+- **Accuracy**: 0.7985 (+/- 0.0144)
+- **Precision**: 0.7847 (+/- 0.0157)
+- **Recall**: 0.8270 (+/- 0.0191)
+- **F1 Score**: 0.8052 (+/- 0.0143)
+- **F-beta Score**: 0.8052 (+/- 0.0143)
+- **ROC AUC**: 0.7983 (+/- 0.0144)
+- **Balanced Accuracy**: 0.7983 (+/- 0.0144)
 
 ### Key Points
 
